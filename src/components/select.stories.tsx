@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react/*'
 import { OptionType, SelectComponent } from './select'
 
-const mockData: OptionType[] = [
+export const mockData: OptionType[] = [
   {
-    value: 'abcd1234',
+    value: 'MAIN_ACCOUNT',
     accountName: 'MAIN-ACCOUNT',
     label: 'Main account',
     currency: 'EUR',
@@ -11,7 +11,7 @@ const mockData: OptionType[] = [
     lastFourDigits: '4892',
   },
   {
-    value: 'qwert9876',
+    value: 'RECURRING_EXPENSES',
     accountName: 'RECURRING-EXPENSES',
     label: 'Recurring expenses',
     currency: 'USD',
@@ -19,7 +19,7 @@ const mockData: OptionType[] = [
     lastFourDigits: '1761',
   },
   {
-    value: 'poiuy1928',
+    value: 'EMERGENCY_FUNDS',
     accountName: 'EMERGENCY-FUNDS',
     label: 'Emergency funds',
     currency: 'EUR',
@@ -27,7 +27,7 @@ const mockData: OptionType[] = [
     lastFourDigits: '8828',
   },
   {
-    value: 'uiop8291',
+    value: 'ACCOUNT_IN_POUNDS',
     accountName: 'ACCOUNT-IN-POUNDS',
     label: 'Account in pounds',
     currency: 'GBP',
@@ -62,7 +62,7 @@ export const WithPlaceholder: Story = {
 
 export const WithDefaultValue: Story = {
   args: {
-    defaultValue: mockData[0],
+    value: mockData[0],
   },
 }
 
@@ -141,6 +141,6 @@ export const WithPlacements: Story = {
 
 export const WithoutIcon: Story = {
   args: {
-    withIcon: false
-  }
+    withIcon: false,
+  },
 }
