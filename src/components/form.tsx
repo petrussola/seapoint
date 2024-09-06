@@ -63,7 +63,7 @@ export const FormComponent = () => {
               )}
 
               <FieldWrapper>
-                Origin account:
+                Origin account*:
                 <SelectComponent
                   placeholder="Select your account..."
                   options={mockData}
