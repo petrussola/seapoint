@@ -25,9 +25,10 @@ export const FormComponent = () => {
         account: null,
       }}
       validationSchema={formSchema}
-      onSubmit={(values) =>
+      onSubmit={(values, { resetForm }) => {
         alert(`You've submitted:\n${JSON.stringify(values)}`)
-      }
+        resetForm()
+      }}
     >
       {({ resetForm, errors, isValid, setFieldValue, values, touched }) => {
         return (
@@ -90,9 +91,7 @@ export const FormComponent = () => {
                 <Button
                   variant="secondary"
                   onClick={() => {
-                    resetForm({
-                      isValidating: false,
-                    })
+                    resetForm()
                   }}
                 >
                   Clear fields
