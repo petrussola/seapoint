@@ -5,6 +5,7 @@ import {
   PoundCircleOutlined,
   DollarCircleOutlined,
 } from '@ant-design/icons'
+import '../index.css'
 
 export type OptionType = {
   value: string
@@ -19,34 +20,36 @@ type SelectComponentParams = {
   options: OptionType[]
   placeholder?: string
   disabled?: boolean
-  defaultValue?: OptionType
+  value?: OptionType
   showSearch?: boolean
   size?: ConfigProviderProps['componentSize']
   onChange?: (value: OptionType) => void
   placement?: SelectCommonPlacement
   autoFocus?: boolean
   withIcon?: boolean
+  style?: any
 }
 
 export const SelectComponent = ({
   options,
   placeholder = 'Select...',
   disabled = false,
-  defaultValue,
+  value,
   showSearch = false,
   size = 'middle',
   onChange,
   placement,
   autoFocus = false,
   withIcon = true,
+  style,
 }: SelectComponentParams) => {
   return (
     <Select
       options={options}
-      style={{ width: '100%' }}
+      style={{ width: '100%', ...style }}
       placeholder={placeholder}
       disabled={disabled}
-      defaultValue={defaultValue}
+      value={value}
       showSearch={showSearch}
       filterOption={(input, option) => {
         return (option?.accountName || '')
