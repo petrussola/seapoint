@@ -141,4 +141,4 @@ const getCurrencyIcon = (currency: OptionType['currency']) => {
   }
 }
 
-const exhaustiveCheck = (arg: never) => arg
+export const exhaustiveCheck = (arg: never) => arg
