@@ -1,4 +1,4 @@
-import { ConfigProviderProps, Select } from 'antd'
+import { ConfigProviderProps, Select, SelectProps } from 'antd'
 import { SelectCommonPlacement } from 'antd/es/_util/motion'
 import {
   EuroCircleOutlined,
@@ -77,7 +77,8 @@ export const SelectComponent = ({
   autoFocus = false,
   withIcon = true,
   style,
-}: SelectComponentParams) => {
+  ...props
+}: SelectComponentParams & SelectProps) => {
   return (
     <Select
       options={options}
@@ -118,6 +119,7 @@ export const SelectComponent = ({
           </div>
         )
       }}
+      {...props}
     />
   )
 }
