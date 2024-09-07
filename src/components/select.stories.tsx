@@ -1,40 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react/*'
-import { OptionType, SelectComponent } from './select'
-
-export const mockData: OptionType[] = [
-  {
-    value: 'MAIN_ACCOUNT',
-    accountName: 'MAIN-ACCOUNT',
-    label: 'Main account',
-    currency: 'EUR',
-    balance: 10,
-    lastFourDigits: '4892',
-  },
-  {
-    value: 'RECURRING_EXPENSES',
-    accountName: 'RECURRING-EXPENSES',
-    label: 'Recurring expenses',
-    currency: 'USD',
-    balance: 10,
-    lastFourDigits: '1761',
-  },
-  {
-    value: 'EMERGENCY_FUNDS',
-    accountName: 'EMERGENCY-FUNDS',
-    label: 'Emergency funds',
-    currency: 'EUR',
-    balance: 10,
-    lastFourDigits: '8828',
-  },
-  {
-    value: 'ACCOUNT_IN_POUNDS',
-    accountName: 'ACCOUNT-IN-POUNDS',
-    label: 'Account in pounds',
-    currency: 'GBP',
-    balance: 10,
-    lastFourDigits: '0963',
-  },
-]
+import { mockData, SelectComponent } from './select'
 
 type Args = Parameters<typeof SelectComponent>[0]
 type Story = StoryObj<Args>

@@ -1,9 +1,8 @@
 import { Formik, Form, Field } from 'formik'
 import styled, { css } from 'styled-components'
 import * as Yup from 'yup'
-import { SelectComponent } from './select'
+import { mockData, SelectComponent } from './select'
 import '../index.css'
-import { mockData } from './select.stories'
 import { useState } from 'react'
 
 const formSchema = Yup.object().shape({
