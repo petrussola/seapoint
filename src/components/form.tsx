@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import { SelectComponent } from './select'
 import '../index.css'
 import { mockData } from './select.stories'
+import { useState } from 'react'
 
 const formSchema = Yup.object().shape({
   statementMessage: Yup.string().max(12, '12 chars max').required(),
@@ -16,6 +17,8 @@ const formSchema = Yup.object().shape({
 })
 
 export const FormComponent = () => {
+  const [isComplete, setIsComplete] = useState(false)
+
   return (
     <Formik
       initialValues={{
@@ -28,6 +31,7 @@ export const FormComponent = () => {
       onSubmit={(values, { resetForm }) => {
         alert(`You've submitted:\n${JSON.stringify(values)}`)
         resetForm()
+        setIsComplete(true)
       }}
     >
       {({ resetForm, errors, isValid, setFieldValue, values, touched }) => {
@@ -35,6 +39,8 @@ export const FormComponent = () => {
           <Form>
             <FormWrapper>
               <h3>Make a payment</h3>
+
+              {isComplete && <Box>Payment complete</Box>}
 
               <FieldWrapper>
                 Message in your statement* (12 chars max):
@@ -159,4 +165,15 @@ const ButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   gap: 8px;
+`
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid green;
+  background-color: lightgreen;
+  border-radius: 4px;
+  width: 100%;
 `
