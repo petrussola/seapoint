@@ -32,6 +32,7 @@ export const FormComponent = () => {
         alert(`You've submitted:\n${JSON.stringify(values)}`)
         resetForm()
         setIsComplete(true)
+        setIsError(false)
       }}
     >
       {({
@@ -41,7 +42,6 @@ export const FormComponent = () => {
         setFieldValue,
         values,
         touched,
-        setTouched,
       }) => {
         return (
           <Form>
@@ -122,19 +122,11 @@ export const FormComponent = () => {
                   type="button"
                   variant="danger"
                   onClick={() => {
-                    setTouched({
-                      statementMessage: true,
-                      receiverMessage: true,
-                      amount: true,
-                      account: true,
-                    })
-
-                    if (isValid && Object.entries(values).length === 0) {
-                      setIsError(true)
-                    }
+                    setIsComplete(false)
+                    setIsError(true)
                   }}
                 >
-                  Mock failed payment
+                  Click to mock error message
                 </Button>
               </ButtonWrapper>
             </FormWrapper>
