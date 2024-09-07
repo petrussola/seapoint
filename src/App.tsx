@@ -1,7 +1,5 @@
-import { Hello } from './components/hello'
-
 function App() {
-  return <Hello />
+  return <div>hello world!</div>
 }
 
 export default App
