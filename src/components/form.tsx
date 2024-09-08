@@ -35,14 +35,7 @@ export const FormComponent = () => {
         setIsError(false)
       }}
     >
-      {({
-        resetForm,
-        errors,
-        isValid,
-        setFieldValue,
-        values,
-        touched,
-      }) => {
+      {({ resetForm, errors, setFieldValue, values, touched }) => {
         return (
           <Form>
             <FormWrapper>
@@ -104,7 +97,7 @@ export const FormComponent = () => {
               )}
 
               <ButtonWrapper>
-                <Button type="submit" variant="primary" disabled={!isValid}>
+                <Button type="submit" variant="primary">
                   Submit payment
                 </Button>
 
